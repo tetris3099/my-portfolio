@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/modern-normalize.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <title>Developer Vladislav</title>
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <picture>
+          <source srcset="./images/my-photo.webp" type="image/webp" />
+          <img src="./images/my-photo.jpg" alt="Front-End developer photo" class="my-photo" />
+        </picture>
+
+        <div class="sidebar__content-box">
+          <div>
+            <p class="sidebar__title" multi-language="contacts.title">Contacts</p>
+            <ul class="contacts-list">
+              <li class="contacts-list__item">
+                <span class="contacts-list__type" multi-language="contacts.phone">Phone:</span>
+                <a href="tel:" class="contacts-list__link">+380-50-976-90-73</a>
+              </li>
+
+              <li class="contacts-list__item">
+                <span class="contacts-list__type" multi-language="contacts.email">Email:</span>
+                <a
+                  href="mailto:tetrir.3.0.99@gmail.com"
+                  class="contacts-list__link"
+                  target="_blank"
+                >
+                  tetrir.3.0.99@gmail.com
+                </a>
+              </li>
+
+              <li class="contacts-list__item">
+                <span class="contacts-list__type">Telegram:</span>
+                <a href="https://t.me/Tetris099" class="contacts-list__link" target="_blank">
+                  @Tetris099
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="sidebar__title">Tech Skills</h4>
+            <ul class="skills-list">
+              <li class="skills-list__item">
+                <span class="skills-list__text">HTML5 (semantic markup)</span>
+              </li>
+              <li class="skills-list__item">
+                <span class="skills-list__text">CSS3 (Flexbox, Grid, responsive layout)</span>
+              </li>
+              <li class="skills-list__item">
+                <span class="skills-list__text">JavaScript (ES6+, DOM, events, fetch)</span>
+              </li>
+              <li class="skills-list__item">
+                <span class="skills-list__text">Webpack (basic setup and bundling)</span>
+              </li>
+              <li class="skills-list__item">
+                <span class="skills-list__text">Git (basic workflow)</span>
+              </li>
+              <li class="skills-list__item">
+                <span class="skills-list__text">WordPress (custom themes, CPT, ACF/CFS)</span>
+              </li>
+              <li class="skills-list__item">
+                <span class="skills-list__text">Node.js (basic understanding)</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="sidebar__title">Soft Skills</h4>
+            <ul class="skills-list">
+              <li class="skills-list__item">
+                <span class="skills-list__text" multi-language="softSkills.communication">
+                  Clear communication
+                </span>
+              </li>
+              <li class="skills-list__item">
+                <span class="skills-list__text" multi-language="softSkills.questions">
+                  Ability to ask the right questions
+                </span>
+              </li>
+              <li class="skills-list__item">
+                <span class="skills-list__text" multi-language="softSkills.improve">
+                  Willingness to learn and improve
+                </span>
+              </li>
+              <li class="skills-list__item">
+                <span class="skills-list__text" multi-language="softSkills.attention">
+                  Attention to code structure
+                </span>
+              </li>
+              <li class="skills-list__item">
+                <span class="skills-list__text" multi-language="softSkills.responsibility">
+                  Responsibility for results
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <!-- ПРАВАЯ ЧАСТЬ -->
+      <div class="content">
+        <!-- ВЕРХНЯЯ ПАНЕЛЬ -->
+        <header class="topbar">
+          <div class="language-box">
+            <button class="selector-language" data-lang-selector>
+              <svg
+                width="19"
+                height="19"
+                viewBox="0 0 15 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M14.0833 7.41667C14.0833 11.0986 11.0986 14.0833 7.41667 14.0833M14.0833 7.41667C14.0833 3.73477 11.0986 0.75 7.41667 0.75M14.0833 7.41667H0.75M7.41667 14.0833C3.73477 14.0833 0.75 11.0986 0.75 7.41667M7.41667 14.0833C9.08419 12.2578 10.0318 9.88864 10.0833 7.41667C10.0318 4.94469 9.08419 2.57557 7.41667 0.75M7.41667 14.0833C5.74915 12.2578 4.8015 9.88864 4.75 7.41667C4.8015 4.94469 5.74915 2.57557 7.41667 0.75M0.75 7.41667C0.75 3.73477 3.73477 0.75 7.41667 0.75"
+                  stroke="#4A4D5C"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span class="selector-language__text">en</span>
+              <svg
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                class="selector-language__chevron"
+              >
+                <path
+                  d="M9.293 12.95l0.707 0.707 5.657-5.657-1.414-1.414-4.243 4.242-4.243-4.242-1.414 1.414z"
+                ></path>
+              </svg>
+            </button>
+            <!-- list language -->
+            <ul class="language-list" data-lang-list>
+              <li class="language-list__item">
+                <button class="language-list__button" data-lang-button="uk">uk</button>
+              </li>
+
+              <li class="language-list__item">
+                <button class="language-list__button" data-lang-button="ru">ru</button>
+              </li>
+            </ul>
+          </div>
+          <!-- theme -->
+          <button class="theme-select" data-them-select>
+            <div class="theme_icon">
+              <svg width="18" height="18">
+                <use href="./images/sprite.svg#light"></use>
+              </svg>
+            </div>
+            <div class="theme_icon __dark">
+              <svg width="18" height="18">
+                <use href="./images/sprite.svg#dark"></use>
+              </svg>
+            </div>
+          </button>
+        </header>
+
+        <main class="main-content">
+          <section class="about">
+            <h2 class="about_position">Front-End Developer</h2>
+            <h1 class="about_name" multi-language="about.name">Vladyslav</h1>
+            <p class="about_description" multi-language="about.description">
+              I’m a front-end developer focused on building clean, responsive interfaces and
+              layouts.I work with HTML, CSS, and JavaScript, paying attention to semantics,
+              performance, and usability. I have experience developing custom WordPress themes,
+              working with custom post types and fields, and implementing interactive features
+              without relying on heavy frameworks. I value clear code, logical structure, and
+              solutions that are easy to maintain and extend.
+            </p>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="./main-js/main.js" type="module"></script>
+  </body>
+</html>
