@@ -344,7 +344,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Загрузка и рендер проэктов
   async function loadProjects() {
-    const res = await fetch('/main-json/projects.json');
+    const res = await fetch('./main-json/projects.json');
     projects = await res.json();
     const projectsRender = await new ProjectsList({
       section: portfolio,
