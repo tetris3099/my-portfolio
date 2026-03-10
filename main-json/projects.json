@@ -1,0 +1,76 @@
+[
+  {
+    "name": "oscarchat",
+    "visitBtn": {
+      "en": "Visit website",
+      "uk": "Переглянути веб-сайт",
+      "ru": "Посетить веб-сайт"
+    },
+    "description": {
+      "en": "Development and adaptation of pages for the marketing tools platform. </br> </br> The following pages were implemented: Blog, Pricing, Single Post, as well as a mobile version of the homepage.",
+      "uk": "Розробка та адаптація сторінок для платформи маркетингових інструментів. </br> </br> Реалізовані сторінки: Blog, Pricing, Single Post, а також мобільна версія головної сторінки.",
+      "ru": "Разработка и адаптация страниц для платформы маркетинговых инструментов. </br> </br> Реализованы страницы: Blog, Pricing, Single Post, а также мобильная версия главной страницы."
+      },
+    "features": {
+      "en": "- semantic HTML markup </br> - adaptive </br> - interactive elements in JavaScript </br> - blog pagination </br> - post filtering </br> - layout adaptation for WordPress",
+      "uk": "- семантична HTML-розмітка </br> - адаптивна верстка </br> - інтерактивні елементи на JavaScript </br> - пагінація блогу </br> - фільтрація постів </br> - адаптація верстки під WordPress",
+      "ru": "- семантическая HTML-разметка </br> - адаптивная верстка </br> - интерактивные элементы на JavaScript </br> - пагинация блога </br> - фильтрация постов </br> - адаптация верстки под WordPress"
+    },
+    "used": "[ HTML, CSS, JavaScript, PHP ]",
+    "pathImage": {
+      "srcsetWebp": "./images/oscarchat.webp",
+      "defaultSrc": "./images/oscarchat.jpg"
+    },
+    "link": "https://www.oscarchat.ai/"
+  },
+
+  {
+    "name": "branding-image-making",
+    "visitBtn": {
+      "en": "Visit website",
+      "uk": "Переглянути веб-сайт",
+      "ru": "Посетить веб-сайт"
+    },
+    "description": {
+      "en": "A demo landing page designed for a portfolio. </br> </br> Implemented responsive layout, style structure in SCSS, and interactive elements in JavaScript, including form processing.",
+      "uk": "Демонстраційний лендинг розроблений для портфоліо. </br> </br> Реалізована адаптивна верстка, структура стилів на SCSS та інтерактивні елементи на JavaScript, включаючи обробку форми.",
+      "ru": "Демонстрационный лендинг, разработанный для портфолио. </br> </br> Реализована адаптивная верстка, структура стилей на SCSS и интерактивные элементы на JavaScript, включая обработку формы."
+    },
+    "features": {
+      "en": "- semantic HTML markup </br> - style architecture in SCSS </br> - adaptive layout </br> - interactive elements in JavaScript </br> - client-side form processing",
+      "uk": "- семантична HTML-розмітка </br> - архітектура стилів на SCSS </br> - адаптивна верстка </br> - інтерактивні елементи на JavaScript </br> - обробка форми на стороні клієнта",
+      "ru": "- семантическая HTML-разметка </br> - архитектура стилей на SCSS </br> - адаптивная верстка </br> - интерактивные элементы на JavaScript </br> - обработка формы на стороне клиента"
+    },
+    "used": "[ HTML, SCSS/CSS, JavaScript ]",
+    "pathImage": {
+      "srcsetWebp": "./images/branding-image-making.webp",
+      "defaultSrc": "./images/branding-image-making.jpg"
+    },
+    "link": "https://tetris3099.github.io/Branding-Image-making/"
+  },
+
+  {
+    "name": "webstudio",
+    "visitBtn": {
+      "en": "Visit website",
+      "uk": "Переглянути веб-сайт",
+      "ru": "Посетить веб-сайт"
+    },
+    "description": {
+      "en": "A demo project developed for a portfolio. </br> </br> The site consists of two pages: the home page and the portfolio page. It features responsive layout, semantic HTML markup, and a JavaScript modal window.",
+      "uk": "Демонстраційний проект, розроблений для портфоліо. </br> </br> Сайт складається з двох сторінок: головної та сторінки портфоліо. Реалізована адаптивна верстка, семантична HTML-розмітка та модальне вікно на JavaScript.",
+      "ru": "Демонстрационный проект, разработанный для портфолио. </br> </br> Сайт состоит из двух страниц: главной и страницы портфолио. Реализована адаптивная верстка, семантическая HTML-разметка и модальное окно на JavaScript."
+    },
+    "features": {
+      "en": "- semantic HTML markup </br> - adaptive layout </br> - SCSS style architecture",
+      "uk": "- семантична HTML-розмітка </br> - адаптивна верстка </br> - архітектура стилів на SCSS",
+      "ru": "- семантическая HTML-разметка </br> - адаптивная верстка </br> - архитектура стилей на SCSS"
+    },
+    "used": "[ HTML, SCSS/CSS, JavaScript ]",
+    "pathImage": {
+      "srcsetWebp": "./images/webstudio.webp",
+      "defaultSrc": "./images/webstudio.jpg"
+    },
+    "link": "https://tetris3099.github.io/web-studio/"
+  }
+]
