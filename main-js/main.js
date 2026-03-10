@@ -96,7 +96,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     if (!languages) {
-      const res = await fetch('/main-json/languages.json');
+      const res = await fetch('./main-json/languages.json');
       if (!res.ok) {
         console.warn('Languages error load');
         return;
