@@ -279,6 +279,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 }
                 <img
                   src="${isObjPathImage ? pathImage.defaultSrc : pathImage}"
+                  loading="lazy"
                   alt="Project ${name} images"
                   class="projects__img"
                   width="100%"
