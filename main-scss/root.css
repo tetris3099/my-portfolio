@@ -70,7 +70,6 @@ body {
   font-weight: var(--fw-regular);
   box-sizing: border-box;
   overflow-x: hidden;
-  margin: 8px;
   color: var(--color-base);
   background-color: #f5f7fa;
   transition: color var(--default-animation), background-color var(--default-animation), opacity var(--default-animation);
@@ -80,6 +79,11 @@ body.open {
 }
 body.change-lang {
   opacity: 0;
+}
+@media screen and (min-width: 1200px) {
+  body {
+    margin: 8px;
+  }
 }
 
 h1,

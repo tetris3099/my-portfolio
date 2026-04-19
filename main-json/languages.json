@@ -14,14 +14,7 @@
     },
     "about": {
       "name": "Vladyslav",
-      "description": "I’m a front-end developer focused on building clean, responsive interfaces and layouts. </br> I work with HTML, CSS, and JavaScript, paying attention to semantics, performance, and usability. </br> </br> I have experience developing custom WordPress themes, working with custom post types and fields, and implementing interactive features without relying on heavy frameworks. I value clear code, logical structure, and solutions that are easy to maintain and extend."
-    },
-    "projectDescription": {
-      "maxprof": "",
-      "bestshop": "",
-      "webstudio": "",
-      "BrandingImageMaking": "",
-      "pumaPrelend": ""
+      "description": "I’m a front-end developer focused on building clean, responsive interfaces and layouts. </br> I work with HTML, CSS, JavaScript and PHP, paying attention to semantics, performance, and usability. </br> </br> I have experience developing custom WordPress themes, working with custom post types and fields, and implementing interactive features without relying on heavy frameworks. I value clear code, logical structure, and solutions that are easy to maintain and extend."
     }
   },
 
@@ -40,14 +33,7 @@
     },
     "about": {
       "name": "Владислав",
-      "description": "Я front-end розробник, який зосереджується на створенні чистих, адаптивних інтерфейсів та структурованої верстки. </br> Працюю з HTML, CSS та JavaScript, приділяючи увагу семантиці, продуктивності й зручності використання. </br> </br> Маю досвід розробки кастомних тем WordPress, роботи з власними типами записів і полями, а також реалізації інтерактивних рішень без використання важких фреймворків. Ціную зрозумілий код, логічну структуру та рішення, які легко підтримувати й розширювати."
-    },
-    "projectDescription": {
-      "maxprof": "",
-      "bestshop": "",
-      "webstudio": "",
-      "BrandingImageMaking": "",
-      "pumaPrelend": ""
+      "description": "Я front-end розробник, який зосереджується на створенні чистих, адаптивних інтерфейсів та структурованої верстки. </br> Працюю з HTML, CSS, JavaScript та PHP, приділяючи увагу семантиці, продуктивності й зручності використання. </br> </br> Маю досвід розробки кастомних тем WordPress, роботи з власними типами записів і полями, а також реалізації інтерактивних рішень без використання важких фреймворків. Ціную зрозумілий код, логічну структуру та рішення, які легко підтримувати й розширювати."
     }
   },
 
@@ -66,14 +52,7 @@
     },
     "about": {
       "name": "Владислав",
-      "description": "Я front-end разработчик, который фокусируется на создании чистых, адаптивных интерфейсов и структурированной верстки. </br> Работаю с HTML, CSS и JavaScript, уделяя внимание семантике, производительности и удобству использования. </br> </br> Имею опыт разработки кастомных тем WordPress, работы с произвольными типами записей и полями, а также реализации интерактивных решений без использования тяжёлых фреймворков. Ценю понятный код, логичную структуру и решения, которые легко поддерживать и развивать."
-    },
-    "projectDescription": {
-      "maxprof": "",
-      "bestshop": "",
-      "webstudio": "",
-      "BrandingImageMaking": "",
-      "pumaPrelend": ""
+      "description": "Я front-end разработчик, который фокусируется на создании чистых, адаптивных интерфейсов и структурированной верстки. </br> Работаю с HTML, CSS, JavaScript и PHP, уделяя внимание семантике, производительности и удобству использования. </br> </br> Имею опыт разработки кастомных тем WordPress, работы с произвольными типами записей и полями, а также реализации интерактивных решений без использования тяжёлых фреймворков. Ценю понятный код, логичную структуру и решения, которые легко поддерживать и развивать."
     }
   }
 }

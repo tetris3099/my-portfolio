@@ -3,6 +3,9 @@ window.addEventListener('DOMContentLoaded', () => {
   let projects = null;
   // html elementst;
   const body = document.body;
+  const sidebar = document.querySelector('.sidebar');
+  const topbar = document.querySelector('.topbar');
+  const topbarWrapper = topbar.querySelector('.topbar-wrapper');
   const themeButton = document.querySelector('button[data-them-select]');
   const langSelectButton = document.querySelector('button[data-lang-selector]');
   const multiLangElem = document.querySelectorAll('[multi-language]');
@@ -55,7 +58,8 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // page loading, theme checking
+  // THEME
+  // // page loading, theme checking
   const isTheme = () => {
     const darkThemeOn = new ToggClass({
       element: [themeButton, body],
@@ -73,6 +77,22 @@ window.addEventListener('DOMContentLoaded', () => {
   };
   isTheme();
 
+  //click theme button
+  const changeTheme = new ToggClass({
+    element: [themeButton, body],
+    className: ['dark', 'dark-mode'],
+    callback: () => {
+      // recording theme localStorage
+      const statusTheme = body.classList.contains('dark-mode');
+      if (statusTheme) {
+        localStorage.setItem('theme', 'dark');
+        return;
+      }
+      localStorage.setItem('theme', 'light');
+    },
+  });
+
+  // LANGUAGES
   // checking text content language
   const isLang = () => {
     const deviceLang = navigator.language;
@@ -165,21 +185,6 @@ window.addEventListener('DOMContentLoaded', () => {
   }
   //
 
-  //click theme button
-  const changeTheme = new ToggClass({
-    element: [themeButton, body],
-    className: ['dark', 'dark-mode'],
-    callback: () => {
-      // recording theme localStorage
-      const statusTheme = body.classList.contains('dark-mode');
-      if (statusTheme) {
-        localStorage.setItem('theme', 'dark');
-        return;
-      }
-      localStorage.setItem('theme', 'light');
-    },
-  });
-
   // open or close language menu
   const langMenu = {
     start() {
@@ -219,6 +224,7 @@ window.addEventListener('DOMContentLoaded', () => {
     changeLang({ lang });
   });
 
+  // PROJECTS
   // render projects card
   class ProjectsList {
     constructor({ section, arr, autoStart = false }) {
@@ -236,7 +242,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     renderCard(lang = document.documentElement.lang) {
       this.arr.forEach((element) => {
-        const { name, visitBtn, description, features, used, pathImage, link } = element;
+        const { name, visitBtn, description, features, used, pathImage, link, thumbnailVisit } =
+          element;
         const isObjPathImage =
           typeof pathImage === 'object' && typeof pathImage !== null && !Array.isArray(pathImage);
         this.projects.insertAdjacentHTML(
@@ -260,9 +267,9 @@ window.addEventListener('DOMContentLoaded', () => {
               <span>${used}</span>
             </div>
             <div class="projects-thumbnail" data-project-image="${link}">
-            <button class="projects-thumbnail__close" data-project-close>
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 20 20"><path d="M2.93 17.07A9.97 9.97 0 0 1-.123 9.877c0-5.523 4.477-10 10-10a9.97 9.97 0 0 1 7.19 3.05l.003.003a9.96 9.96 0 0 1 2.807 6.947c0 5.523-4.477 10-10 10-2.7 0-5.151-1.07-6.95-2.81zm1.41-1.41A8.004 8.004 0 1 0 15.66 4.34 8.004 8.004 0 1 0 4.34 15.66m9.9-8.49L11.41 10l2.83 2.83-1.41 1.41L10 11.41l-2.83 2.83-1.41-1.41L8.59 10 5.76 7.17l1.41-1.41L10 8.59l2.83-2.83z"></path></svg>
-            </button>
+              <button class="projects-thumbnail__close" data-project-close>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 20 20"><path d="M2.93 17.07A9.97 9.97 0 0 1-.123 9.877c0-5.523 4.477-10 10-10a9.97 9.97 0 0 1 7.19 3.05l.003.003a9.96 9.96 0 0 1 2.807 6.947c0 5.523-4.477 10-10 10-2.7 0-5.151-1.07-6.95-2.81zm1.41-1.41A8.004 8.004 0 1 0 15.66 4.34 8.004 8.004 0 1 0 4.34 15.66m9.9-8.49L11.41 10l2.83 2.83-1.41 1.41L10 11.41l-2.83 2.83-1.41-1.41L8.59 10 5.76 7.17l1.41-1.41L10 8.59l2.83-2.83z"></path></svg>
+              </button>
               <picture>
                 ${isObjPathImage ? `<source srcset="${pathImage.srcsetWebp}" type="image/webp" />` : ''}
                 ${
@@ -272,12 +279,13 @@ window.addEventListener('DOMContentLoaded', () => {
                 }
                 <img
                   src="${isObjPathImage ? pathImage.defaultSrc : pathImage}"
-                  alt="Project images"
+                  alt="Project ${name} images"
                   class="projects__img"
                   width="100%"
                   height="100%"
                 />
               </picture>
+              <p class="thumbnail__visit-text" multi-language="thumbnailVisit">${thumbnailVisit[lang]}</p>
             </div>
           </li>`
         );
@@ -314,8 +322,10 @@ window.addEventListener('DOMContentLoaded', () => {
           prevActive.classList.remove('active');
           setTimeout(() => {
             prevActive.style.zIndex = null;
-            image.style.zIndex = 10000;
-            image.classList.add('active');
+            if (image) {
+              image.style.zIndex = 10000;
+              image.classList.add('active');
+            }
           }, 250);
           return;
         }
@@ -329,11 +339,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
     langFn(lang) {
       const projectsItem = this.projects.querySelectorAll('.projects__item');
-      projectsItem.forEach(el => {
+      projectsItem.forEach((el) => {
         el.remove();
       });
       this.renderCard(lang);
-    } 
+    }
 
     start() {
       this.renderList();
@@ -354,12 +364,46 @@ window.addEventListener('DOMContentLoaded', () => {
     return projectsRender;
   }
 
-  let projectsRender ;
+  let projectsRender;
   loadProjects()
-  .then(res => projectsRender = res)
-  .catch(err => console.log(err)); // Загрузка и рендер проэктов
+    .then((res) => (projectsRender = res))
+    .catch((err) => console.log(err)); // Загрузка и рендер проэктов окончен
 
-  // event listener
+  // MOBILE VER FUNCTION
+  isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  );
+
+  if (isMobileDevice) {
+    function openSidebar(typeChange) {
+      const toggSidebar = new ToggClass({
+        element: [sidebar, body],
+        className: ['open', 'open'],
+      })
+
+      if (typeChange === 'open') {
+        const topbarWrapperTransition = parseFloat(getComputedStyle(topbarWrapper).transition.match(/\d+\.\d+/));
+        const timeout = topbarWrapperTransition * 2 * 100;
+
+        topbar.style.overflow = 'hidden';
+        topbarWrapper.classList.add('open-sidebar-mobile');
+        setTimeout(() => {
+          sidebar.style.transition = `transform ${topbarWrapperTransition / 2}s linear`;
+          toggSidebar.start();
+        }, timeout);
+
+        const delay = (timeout + topbarWrapperTransition) * 3.5;
+        setTimeout(() => {
+          topbarWrapper.classList.remove('open-sidebar-mobile');
+          topbar.style.overflow = null;
+        }, delay);
+      } else if (typeChange === 'close') {
+        toggSidebar.start();
+      }
+    }
+  }
+
+  // EVENTS LISTENER
   document.addEventListener('click', (event) => {
     const target = event.target;
 
@@ -387,6 +431,15 @@ window.addEventListener('DOMContentLoaded', () => {
         });
       }
       langMenu.start();
+    }
+
+    // MOBILE VER FUNCTION
+    if (isMobileDevice) {
+      const isControlSidebar = target.closest('[data-mobile-sidebar-btn]');
+      if (isControlSidebar) {
+        const typeChange = isControlSidebar.getAttribute('data-mobile-sidebar-btn');
+        openSidebar(typeChange);
+      }
     }
   });
   // EVENTS END

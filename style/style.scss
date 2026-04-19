@@ -1,27 +1,75 @@
 @import '../main-scss/root.scss';
+@import '../main-scss/mixin.scss';
 
 .container {
   display: flex;
 }
 
 .sidebar {
-  padding-top: 40px;
-  width: 370px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transform: translateX(-100%);
+  width: 100vw;
   color: #ffffff;
   background-color: #1e2939;
+
+  &.open {
+    transform: translateX(0%);
+  }
+
+  @include mq(before-desktop) {
+    overflow-y: auto;
+    height: 100vh;
+    padding-bottom: 50px;
+  }
+
+  @include mq(desktop) {
+    position: static;
+    transform: translateX(0%);
+    width: 370px;
+    padding-top: 40px;
+  }
 }
 
 .my-photo {
-  width: 370px;
-  // height: 492px;
+  width: 100%;
   object-fit: cover;
+
+  @include mq(tablet) {
+    width: 370px;
+  }
 }
 
 .sidebar__content-box {
   display: flex;
   flex-direction: column;
   gap: 50px;
-  padding: 50px 0 50px 27px;
+  padding: 30px 0 50px 27px;
+
+  @media screen and (max-width: 365px) {
+    padding: 30px 0 50px 15px;
+  }
+
+  @include mq(tablet-only) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 768px;
+    padding: 50px 27px 50px 27px;
+  }
+}
+
+.sidebar__content-box > div {
+  width: 100%;
+
+  &:nth-last-child(-n + 2) {
+    @include mq(tablet-only) {
+      display: inline-block;
+      width: auto;
+    }
+  }
 }
 
 .sidebar__title {
@@ -71,10 +119,12 @@
 
 // MAIN CONTENT
 .content {
+  position: relative;
   width: 100%;
-  padding: 0 30px 15px 90px;
+  padding: 54px 15px 15px 15px;
   background-color: #ffffff;
   box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
   transition:
     color var(--default-animation),
     background-color var(--default-animation);
@@ -83,20 +133,69 @@
   body.dark-mode & {
     background-color: #313233;
   }
+
+  @include mq(desktop) {
+    padding: 0 30px 15px 90px;
+  }
 }
 
+// HEADER TOPBAR
 .topbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: right;
-  gap: 15px;
   padding-top: 15px;
+  background-color: inherit;
+
+  @include mq(before-desktop) {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    width: calc(100vw - 30px);
+    padding-bottom: 15px;
+  }
+
+  @include mq(desktop) {
+    flex-direction: row;
+  }
+}
+
+.topbar-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: right;
+  align-items: center;
+  gap: 15px;
+  transition: transform 850ms linear;
+
+  @include mq(before-desktop) {
+    padding: 0 8px;
+  }
+
+  &.open-sidebar-mobile {
+    transform: translateX(200%);
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: -75%;
+      width: 70%;
+      height: 1.5px;
+      background-color: #313233;
+
+      body.dark-mode & {
+        background-color: #fff;
+      }
+    }
+  }
 }
 
 // LANGUAGE
 .language-box {
   position: relative;
   min-width: 77.61px;
+  height: 29px;
 }
 
 .selector-language {
@@ -110,6 +209,7 @@
   gap: 3px;
   padding: 3px;
   width: 100%;
+  height: 100%;
   border-radius: 13px;
   border: 2px solid var(--color-base);
   background-color: white;
@@ -242,33 +342,89 @@
   pointer-events: visible;
 }
 
+// open sidebar
+.open-sidebar {
+  font-family: 'Roboto', sans-serif;
+  position: absolute;
+  left: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+
+  @include mq(desktop) {
+    display: none;
+  }
+
+  &.__sidebar {
+    position: static;
+    flex-direction: row-reverse;
+    margin: 0 0 0 auto;
+    padding: 15px;
+  }
+
+  & > svg {
+    transform: rotateZ(45deg);
+    transition: transform var(--default-animation);
+  }
+
+  &.__sidebar > svg {
+    transform: rotateZ(-135deg);
+  }
+}
+// HEADER TOPBAR END
+
 // MAIN CONTENT
 .about {
-  padding: 40px 0;
+  padding: 25px 0;
+
+  @include mq(desktop) {
+    padding: 40px 0;
+  }
 }
 
 .about_position {
   font-weight: var(--fw-bold);
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+
+  @include mq(desktop) {
+    margin-bottom: 10px;
+  }
 }
 
 .about_name {
   font-weight: var(--fw-bold);
-  font-size: 35px;
-  margin-bottom: 25px;
+  font-size: 30px;
+  margin-bottom: 12px;
+
+  @include mq(desktop) {
+    font-size: 35px;
+    margin-bottom: 25px;
+  }
 }
 
 .about_description {
-  font-size: 14px;
-  line-height: 24px;
+  font-size: 13px;
+  line-height: 21px;
+
+  @include mq(desktop) {
+    font-size: 14px;
+    line-height: 24px;
+  }
 }
 
 // PROJECTS
 .portfolio__title {
   font-weight: var(--fw-bold);
-  font-size: 27px;
+  font-size: 25px;
   margin-bottom: 30px;
+
+  @include mq(desktop) {
+    font-size: 27px;
+    margin-bottom: 19px;
+  }
 }
 
 .projects__item {
@@ -306,12 +462,17 @@
 }
 
 .visit-website {
+  display: none;
   font-weight: var(--fw-semibold);
   padding: 8px 10px;
   border-radius: 5px;
   color: #fff;
   background-color: #313233;
   border: 1px solid #313233;
+
+  @include mq(desktop) {
+    display: block;
+  }
 
   &:hover {
     color: #313233;
@@ -331,8 +492,12 @@
 }
 
 .projects__description {
-  font-size: 16px;
+  font-size: 14px;
   max-width: 420px;
+
+  @include mq(desktop) {
+    font-size: 16px;
+  }
 
   &:nth-child(2n) {
     margin: auto 0 18px 0;
@@ -351,9 +516,9 @@ p.projects__description {
 }
 
 .projects-thumbnail {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
+  position: relative;
+  margin: 15px auto 0 auto;
+
   width: 210px;
   height: 121.85px;
   cursor: pointer;
@@ -368,34 +533,28 @@ p.projects__description {
     box-shadow var(--default-animation);
 
   &.active {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 680px;
-    height: 400px;
+    width: 100%;
+    height: auto;
     box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.73);
     -webkit-box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.73);
     -moz-box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.73);
   }
 
-  &.active::after {
-    content: 'Нажмите чтобы перейти к сайту';
-    display: block;
-    padding: 3px 5px;
-    border-radius: 5px 5px 0 5px;
+  @include mq(desktop) {
     position: absolute;
-    right: 0;
-    bottom: 0;
+    bottom: 10px;
+    right: 10px;
+    margin: 0;
 
-    font-weight: var(--fw-semibold);
-    font-size: 15px;
-    color: inherit;
-    background-color: rgb(247, 218, 165);
-    transition: background-color var(--default-animation);
-
-    // dark theme
-    body.dark-mode & {
-      background-color: #444444;
+    &.active {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 680px;
+      height: 400px;
+      box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.73);
+      -webkit-box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.73);
+      -moz-box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.73);
     }
   }
 }
@@ -404,7 +563,7 @@ p.projects__description {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px;
+  padding: 3px;
   border-radius: 100%;
   color: black;
   background-color: #818181bb;
@@ -420,16 +579,68 @@ p.projects__description {
     visibility var(--default-animation),
     pointer-events var(--default-animation);
 
-    & > svg {
-      fill: currentColor;
-    }
+  @include mq(desktop) {
+    padding: 5px;
+  }
 
-    &:hover {
-      color: #fff;
+  & > svg {
+    fill: currentColor;
+  }
+
+  @include mq(before-desktop) {
+    & > svg {
+      width: 18px;
+      height: 18px;
     }
+  }
+
+  &:hover {
+    color: #fff;
+  }
 }
 
-.projects-thumbnail.active .projects-thumbnail__close {
+.thumbnail__visit-text {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  width: 100%;
+  padding: 3px 5px;
+  overflow: hidden;
+  border-radius: inherit;
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  font-weight: var(--fw-semibold);
+  font-size: 10px;
+  color: inherit;
+  background-color: rgb(247, 218, 165);
+  transition:
+    opacity 350ms linear,
+    visibility 350ms linear,
+    pointer-events 350ms linear,
+    background-color var(--default-animation);
+
+  @include mq(before-desktop) {
+    height: 17.5px;
+  }
+
+  @include mq(desktop) {
+    font-size: 15px;
+    width: auto;
+    border-radius: 5px 5px 0 5px;
+  }
+
+  // dark theme
+  body.dark-mode & {
+    background-color: #444444;
+  }
+}
+
+.projects-thumbnail.active .projects-thumbnail__close,
+.projects-thumbnail.active .thumbnail__visit-text {
   opacity: 1;
   visibility: visible;
   pointer-events: unset;

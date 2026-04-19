@@ -1,3 +1,5 @@
+@import './mixin.scss';
+
 @font-face {
   font-family: 'Montserrat';
   src:
@@ -95,7 +97,6 @@ body {
   font-weight: var(--fw-regular);
   box-sizing: border-box;
   overflow-x: hidden;
-  margin: 8px;
   color: var(--color-base);
   background-color: #f5f7fa;
   transition:
@@ -109,6 +110,10 @@ body {
 
   &.change-lang {
     opacity: 0;
+  }
+
+  @include mq(desktop) {
+    margin: 8px;
   }
 }
 

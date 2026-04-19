@@ -10,7 +10,7 @@
       "en": "Development and adaptation of pages for the marketing tools platform. </br> </br> The following pages were implemented: Blog, Pricing, Single Post, as well as a mobile version of the homepage.",
       "uk": "Розробка та адаптація сторінок для платформи маркетингових інструментів. </br> </br> Реалізовані сторінки: Blog, Pricing, Single Post, а також мобільна версія головної сторінки.",
       "ru": "Разработка и адаптация страниц для платформы маркетинговых инструментов. </br> </br> Реализованы страницы: Blog, Pricing, Single Post, а также мобильная версия главной страницы."
-      },
+    },
     "features": {
       "en": "- semantic HTML markup </br> - adaptive </br> - interactive elements in JavaScript </br> - blog pagination </br> - post filtering </br> - layout adaptation for WordPress",
       "uk": "- семантична HTML-розмітка </br> - адаптивна верстка </br> - інтерактивні елементи на JavaScript </br> - пагінація блогу </br> - фільтрація постів </br> - адаптація верстки під WordPress",
@@ -20,6 +20,11 @@
     "pathImage": {
       "srcsetWebp": "./images/oscarchat.webp",
       "defaultSrc": "./images/oscarchat.jpg"
+    },
+    "thumbnailVisit": {
+      "en": "Click on the photo to visit the website",
+      "uk": "Натисніть на фото, щоб відвідати веб-сайт",
+      "ru": "Нажмите на фотографию, чтобы перейти на сайт"
     },
     "link": "https://www.oscarchat.ai/"
   },
@@ -46,6 +51,11 @@
       "srcsetWebp": "./images/branding-image-making.webp",
       "defaultSrc": "./images/branding-image-making.jpg"
     },
+    "thumbnailVisit": {
+      "en": "Click on the photo to visit the website",
+      "uk": "Натисніть на фото, щоб відвідати веб-сайт",
+      "ru": "Нажмите на фотографию, чтобы перейти на сайт"
+    },
     "link": "https://tetris3099.github.io/Branding-Image-making/"
   },
 
@@ -70,6 +80,11 @@
     "pathImage": {
       "srcsetWebp": "./images/webstudio.webp",
       "defaultSrc": "./images/webstudio.jpg"
+    },
+    "thumbnailVisit": {
+      "en": "Click on the photo to visit the website",
+      "uk": "Натисніть на фото, щоб відвідати веб-сайт",
+      "ru": "Нажмите на фотографию, чтобы перейти на сайт"
     },
     "link": "https://tetris3099.github.io/web-studio/"
   }
