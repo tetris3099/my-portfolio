@@ -515,6 +515,10 @@ p.projects__description {
   border-bottom: 1px solid #acacacc8;
 }
 
+div.projects__description > p {
+  line-height: 23px;
+}
+
 .projects-thumbnail {
   position: relative;
   margin: 15px auto 0 auto;

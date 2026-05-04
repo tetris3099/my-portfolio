@@ -1,5 +1,35 @@
 [
   {
+    "name": "worqlo",
+    "visitBtn": {
+      "en": "Visit website",
+      "uk": "Переглянути веб-сайт",
+      "ru": "Посетить веб-сайт"
+    },
+    "description": {
+      "en": "Development and integration of webinar functionality for a marketing website on WordPress.</br> </br> Implemented pages: webinars listing, single webinar, webinar view page.",
+      "uk": "Розробка та інтеграція функціоналу вебінарів для маркетингового сайту на WordPress.</br> </br> Реалізовані сторінки: список вебінарів, сторінка вебінару, сторінка перегляду.",
+      "ru": "Разработка и интеграция функционала вебинаров для маркетингового сайта на WordPress.</br> </br> Реализованы страницы: список вебинаров, страница вебинара, страница просмотра."
+    },
+    "features": {
+      "en": "- custom post type & taxonomy </br> - AJAX filtering, pagination and search (Fetch API) </br> - registration form with validation </br> - database storage for submissions </br> - email notifications (upcoming / on-demand logic) </br> - dynamic UI updates without page reload </br> - layout adaptation for WordPress",
+      "uk": "- кастомний тип записів та таксономія </br> - AJAX-фільтрація, пагінація та пошук (Fetch API) </br> - форма реєстрації з валідацією </br> - збереження заявок у базі даних </br> - email-сповіщення (upcoming / on-demand) </br> - динамічне оновлення інтерфейсу без перезавантаження </br> - адаптація верстки під WordPress",
+      "ru": "- кастомный тип записей и таксономия </br> - AJAX-фильтрация, пагинация и поиск (Fetch API) </br> - форма регистрации с валидацией </br> - сохранение заявок в базе данных </br> - email-уведомления (upcoming / on-demand) </br> - динамическое обновление интерфейса без перезагрузки </br> - адаптация верстки под WordPress"
+    },
+    "used": "[ HTML, CSS, JavaScript, PHP, MySQL ]",
+    "pathImage": {
+      "srcsetWebp": "./images/worqlo.webp",
+      "defaultSrc": "./images/worqlo.jpg"
+    },
+    "thumbnailVisit": {
+      "en": "Click on the photo to visit the website",
+      "uk": "Натисніть на фото, щоб відвідати веб-сайт",
+      "ru": "Нажмите на фотографию, чтобы перейти на сайт"
+    },
+    "link": "https://worqlo.com/webinars/"
+  },
+
+  {
     "name": "oscarchat",
     "visitBtn": {
       "en": "Visit website",
