@@ -324,7 +324,7 @@ window.addEventListener('DOMContentLoaded', () => {
           setTimeout(() => {
             prevActive.style.zIndex = null;
             if (image) {
-              image.style.zIndex = 10000;
+              image.style.zIndex = 9;
               image.classList.add('active');
             }
           }, 250);
@@ -332,7 +332,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
         if (image) {
-          image.style.zIndex = 10000;
+          image.style.zIndex = 9;
           image.classList.add('active');
         }
       });
@@ -380,10 +380,12 @@ window.addEventListener('DOMContentLoaded', () => {
       const toggSidebar = new ToggClass({
         element: [sidebar, body],
         className: ['open', 'open'],
-      })
+      });
 
       if (typeChange === 'open') {
-        const topbarWrapperTransition = parseFloat(getComputedStyle(topbarWrapper).transition.match(/\d+\.\d+/));
+        const topbarWrapperTransition = parseFloat(
+          getComputedStyle(topbarWrapper).transition.match(/\d+\.\d+/)
+        );
         const timeout = topbarWrapperTransition * 2 * 100;
 
         topbar.style.overflow = 'hidden';
